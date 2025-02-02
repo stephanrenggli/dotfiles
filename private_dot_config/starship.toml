@@ -1,0 +1,328 @@
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$time\n\
+$character\
+"""
+
+palette = "rose-pine"
+
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+
+[palettes.rose-pine-dawn]
+overlay = '#f2e9e1'
+love = '#b4637a'
+gold = '#ea9d34'
+rose = '#d7827e'
+pine = '#286983'
+foam = '#56949f'
+iris = '#907aa9'
+
+[directory]
+format = "[$path]($style) "
+style = "foam"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[fill]
+style = "fg:overlay"
+symbol = " "
+
+[git_branch]
+format = "[$symbol $branch]($style) "
+style = "pine"
+symbol = ""
+
+[git_commit]
+tag_symbol = '  '
+
+[git_status]
+disabled = false
+style = "love"
+format = '([$all_status$ahead_behind]($style)) '
+up_to_date = '[ ✓ ](iris)'
+untracked = '[?\($count\)](gold)'
+stashed = '[\$](iris)'
+modified = '[!\($count\)](gold)'
+renamed = '[»\($count\)](iris)'
+deleted = '[✘\($count\)](style)'
+staged = '[++\($count\)](gold)'
+ahead = '[⇡\(${count}\)](foam)'
+diverged = '⇕[\[](iris)[⇡\(${ahead_count}\)](foam)[⇣\(${behind_count}\)](rose)[\]](iris)'
+behind = '[⇣\(${count}\)](rose)'
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "rose"
+time_format = "%H:%M"
+
+[username]
+disabled = false
+format = "[$user]($style) "
+show_always = true
+style_root = "iris"
+style_user = "iris"
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "iris"
+
+# OS Symbols
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[character]
+disabled = false
+success_symbol = "[❯](iris)"
+error_symbol = "[❯](love)"
+vicmd_symbol = "[❮](foam)"
+
+# Languages
+[aws]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = "  "
+
+[buf]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[c]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[conda]
+style = "pine"
+format = "[$symbol$environment]($style) "
+disabled = false
+symbol = '🅒 '
+
+[crystal]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[dart]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[docker_context]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[elixir]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[elm]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[golang]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[gradle]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[haskell]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[haxe]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[java]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[julia]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[kotlin]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[lua]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[meson]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = "󰔷 "
+
+[nodejs]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[nim]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = "󰆥 "
+
+[nix_shell]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[ocaml]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[perl]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[rlang]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = "󰟔 "
+
+[ruby]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[rust]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = ""
+
+[scala]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[swift]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[php]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "
+
+[python]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = ' '
+
+[zig]
+style = "pine"
+format = "[$symbol$version]($style) "
+disabled = false
+symbol = " "

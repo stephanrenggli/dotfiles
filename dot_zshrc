@@ -1,0 +1,229 @@
+# theme switcher
+switch_theme() {
+    local theme_file="$HOME/.zsh/.zsh_theme"
+
+    if [[ "$1" == "dark" ]]; then
+        # Rose Pine Dark colors
+        local rose_pine_base='#191724'
+        local rose_pine_surface='#1f1d2e'
+        local rose_pine_overlay='#26233a'
+        local rose_pine_muted='#6e6a86'
+        local rose_pine_subtle='#908caa'
+        local rose_pine_text='#e0def4'
+        local rose_pine_love='#eb6f92'
+        local rose_pine_gold='#f6c177'
+        local rose_pine_rose='#ebbcba'
+        local rose_pine_pine='#31748f'
+        local rose_pine_foam='#9ccfd8'
+        local rose_pine_iris='#c4a7e7'
+        local rose_pine_highlight_low='#21202e'
+        local rose_pine_highlight_med='#403d52'
+        local rose_pine_highlight_high='#524f67'
+
+        local tmux_theme='main'
+
+        echo "dark" >"$theme_file"
+    elif [[ "$1" == "light" ]]; then
+        # Rose Pine Dawn (Light) colors
+        local rose_pine_base='#faf4ed'
+        local rose_pine_surface='#fffaf3'
+        local rose_pine_overlay='#f2e9e1'
+        local rose_pine_muted='#9893a5'
+        local rose_pine_subtle='#797593'
+        local rose_pine_text='#575279'
+        local rose_pine_love='#b4637a'
+        local rose_pine_gold='#ea9d34'
+        local rose_pine_rose='#d7827e'
+        local rose_pine_pine='#286983'
+        local rose_pine_foam='#56949f'
+        local rose_pine_iris='#907aa9'
+        local rose_pine_highlight_low='#f4ede8'
+        local rose_pine_highlight_med='#dfdad9'
+        local rose_pine_highlight_high='#cecacd'
+
+        local tmux_theme='dawn'
+
+        echo "light" >"$theme_file"
+    fi
+
+    # set tmux theme
+    tmux set -g @rose_pine_variant "$tmux_theme"
+
+    # set zsh substring search colors
+    HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=$rose_pine_iris,fg=$rose_pine_text,bold"
+    HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="bg=$rose_pine_love,fg=$rose_pine_text,bold"
+
+    # set zsh autosuggestions colors
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$rose_pine_text,bg=bold,underline"
+
+    # set starship theme
+    # https://github.com/starship/starship/pull/4439
+
+    # set fzf colors
+    export FZF_DEFAULT_OPTS="
+		--color=fg:$rose_pine_subtle,bg:$rose_pine_base,hl:$rose_pine_rose
+		--color=fg+:$rose_pine_text,bg+:$rose_pine_overlay,hl+:$rose_pine_rose
+		--color=border:$rose_pine_highlight_med,header:$rose_pine_pine,gutter:$rose_pine_base
+		--color=spinner:$rose_pine_gold,info:$rose_pine_foam
+		--color=pointer:$rose_pine_iris,marker:$rose_pine_love,prompt:$rose_pine_subtle"
+}
+
+# Load the saved theme once when a new shell session starts
+load_theme() {
+    local theme_file="$HOME/.zsh/.zsh_theme"
+
+    if [[ -f "$theme_file" ]]; then
+        local saved_theme
+        saved_theme=$(cat "$theme_file")
+
+        if [[ "$saved_theme" == "dark" || "$saved_theme" == "light" ]]; then
+            switch_theme "$saved_theme"
+        fi
+    fi
+}
+
+# Ensure the theme is only loaded once
+if [[ -z "$THEME_LOADED" ]]; then
+    local THEME_LOADED=1
+    load_theme
+fi
+
+# Aliases for theme switching
+alias dark="switch_theme dark"
+alias light="switch_theme light"
+
+# exports
+export EDITOR=vim
+export VISUAL=code
+export XDG_CONFIG_HOME=~/.config
+
+# autoload help
+autoload run-help
+unalias run-help 2>/dev/null
+
+# zsh options
+# see all options here: https://zsh.sourceforge.io/Doc/Release/Options.html
+
+# zsh history options
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+setopt BANG_HIST              # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
+setopt SHARE_HISTORY          # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
+
+# zsh completion options
+setopt COMPLETE_IN_WORD # Complete from both ends of a word.
+setopt ALWAYS_TO_END    # Move cursor to the end of a completed word.
+setopt PATH_DIRS        # Perform path search even on command names with slashes.
+setopt AUTO_MENU        # Show completion menu on a successive tab press.
+setopt AUTO_LIST        # Automatically list choices on ambiguous completion.
+setopt AUTO_PARAM_SLASH # If completed parameter is a directory, add a trailing slash.
+setopt EXTENDED_GLOB    # Needed for file modification glob modifiers with compinit.
+unsetopt MENU_COMPLETE  # Do not autoselect the first completion entry.
+unsetopt FLOW_CONTROL   # Disable start/stop characters in shell editor.
+
+# directory zsh options
+setopt AUTO_CD           # Auto changes to a directory without typing cd.
+setopt AUTO_PUSHD        # Push the old directory onto the stack on cd.
+setopt PUSHD_IGNORE_DUPS # Do not store duplicates in the stack.
+setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
+setopt PUSHD_TO_HOME     # Push to home directory when no argument is given.
+setopt CDABLE_VARS       # Change directory to a path stored in a variable.
+setopt MULTIOS           # Write to multiple descriptors.
+setopt EXTENDED_GLOB     # Use extended globbing syntax.
+
+# zsh substring search options
+
+# zsh autosuggest options
+
+
+# other zsh options
+setopt INTERACTIVECOMMENTS # turn on comments in terminal (useful for copy/paste)
+unsetopt LIST_BEEP         # disable beeping if completion in ambiguous
+setopt PROMPT_SUBST        # enable parameter expansion, command substitution and arithmetic expansion
+setopt PUSHD_MINUS         # i.e. cd -3 goes back three directories
+
+# zsh zle
+
+# disable highlighting for pasted text
+zle_highlight=('paste:none')
+
+# zsh zstyle
+
+# set cache path
+zstyle ':completion:*' cache-path ${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compcache
+
+# add case insensitivity and dash/underscore insensitivity
+typeset -A match_specifications=(
+    [any_before_any]='r:|?=**'
+    [any_before_dot]='r:|[.]=**'
+    [any_before_word]='l:|=*'
+    [case_and_dash_insensitive]='m:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}'
+    [nonseparators_after_any_before_separator]='r:?||[-_ \]=*'
+    [separator_after_any]='l:?|=[-_ \]'
+)
+zstyle ':completion:*' matcher-list \
+    "$match_specifications[case_and_dash_insensitive] $match_specifications[any_before_dot] $match_specifications[any_before_word]" \
+    "+$match_specifications[nonseparators_after_any_before_separator] $match_specifications[separator_after_any]" \
+    "$match_specifications[case_and_dash_insensitive] $match_specifications[any_before_any]"
+unset match_specifications
+
+# show completion suggestions in a menu
+zstyle ':completion:*' menu select
+
+# enable completion cache
+zstyle ':completion::complete:*' use-cache yes
+
+# zsh plugins
+
+# zsh-autopair (auto-close brackets, quotes, etc.)
+source ~/.zsh/zsh-autopair/autopair.zsh
+autopair-init
+
+# zsh-completions
+fpath=(~/.zsh/zsh-completions/src $fpath)
+
+# zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-history-substring-search (must be loaded after zsh-syntax-highlighting)
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+# bind up and down arrows for substring search
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+# bind k and j for substring search in vi mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# zsh-autosuggestions (must be loaded after zsh-history-substring-search)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# completion
+# kubectl completion
+source <(kubectl completion zsh)
+
+# chezmoi completion
+source <(chezmoi completion zsh)
+
+# linuxbrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
+# fzf
+source <(fzf --zsh)
+
+# starship
+eval "$(starship init zsh)"
+
+# aliases
+source ~/.aliases
