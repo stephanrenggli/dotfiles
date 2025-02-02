@@ -1,0 +1,6 @@
+theme = light:rose-pine-dawn,dark:rose-pine
+shell-integration = zsh
+font-family = "Liga SFMono Nerd Font"
+font-family-bold = "Liga SFMono Nerd Font Bold"
+font-family-italic = "Liga SFMono Nerd Font Italic"
+font-family-bold-italic = "Liga SFMono Nerd Font Bold Italic"
