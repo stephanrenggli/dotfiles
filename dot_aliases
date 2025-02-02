@@ -13,6 +13,7 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
 alias ip="ip -c"
+alias ssh="TERM=xterm-256color ssh"
 
 # chezmoi aliases
 alias cm="chezmoi"
