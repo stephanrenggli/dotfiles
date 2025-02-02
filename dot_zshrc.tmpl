@@ -276,13 +276,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 # zsh-autosuggestions (must be loaded after zsh-history-substring-search)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# completion
-# kubectl completion
-source <(kubectl completion zsh)
-
-# chezmoi completion
-source <(chezmoi completion zsh)
-
 {{ if eq .chezmoi.os "darwin" }}
 # macOS
 {{ else if eq .chezmoi.os "linux" }}
