@@ -45,6 +45,12 @@ Pictures = " "
 style = "fg:overlay"
 symbol = " "
 
+[character]
+disabled = false
+success_symbol = "[❯](foam)"
+error_symbol = "[❯](love)"
+vicmd_symbol = "[❮](foam)"
+
 [git_branch]
 format = "[$symbol $branch]($style) "
 style = "pine"
@@ -75,7 +81,7 @@ style = "rose"
 time_format = "%H:%M"
 
 [username]
-disabled = false
+disabled = true
 format = "[$user]($style) "
 show_always = true
 style_root = "iris"
@@ -133,12 +139,6 @@ Ubuntu = " "
 Unknown = " "
 Void = " "
 Windows = "󰍲 "
-
-[character]
-disabled = false
-success_symbol = "[❯](iris)"
-error_symbol = "[❯](love)"
-vicmd_symbol = "[❮](foam)"
 
 # Languages
 [aws]
