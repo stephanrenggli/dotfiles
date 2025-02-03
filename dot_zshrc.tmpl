@@ -267,8 +267,13 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-history-substring-search (must be loaded after zsh-syntax-highlighting)
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind up and down arrows for substring search
+{{ if eq .chezmoi.os "darwin" }}
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+{{ else }}
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+{{ end }}
 # bind k and j for substring search in vi mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
