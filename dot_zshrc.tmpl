@@ -82,6 +82,9 @@ load_theme() {
     fi
 }
 
+# start tmux session by default
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # Ensure the theme is only loaded once
 if [[ -z "$THEME_LOADED" ]]; then
     local THEME_LOADED=1
