@@ -54,7 +54,7 @@ switch_theme() {
     HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="bg=$rose_pine_love,fg=$rose_pine_text,bold"
 
     # set zsh autosuggestions colors
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$rose_pine_text,bg=bold,underline"
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$rose_pine_text,bg=bold"
 
     # set starship theme
     # https://github.com/starship/starship/pull/4439
@@ -83,7 +83,9 @@ load_theme() {
 }
 
 # start tmux session by default
-if [ "$TMUX" = "" ]; then tmux; fi
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
 
 # Ensure the theme is only loaded once
 if [[ -z "$THEME_LOADED" ]]; then
