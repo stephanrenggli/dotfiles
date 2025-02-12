@@ -19,9 +19,39 @@ alias ssh="TERM=xterm-256color ssh"
 alias cm="chezmoi"
 alias cme="chezmoi edit"
 alias cma="chezmoi apply"
+alias cms="chezmoi status"
 
 # git aliases
 alias g="git"
+alias gcl="git clone"
+alias gs="git status"
+alias ga="git add"
+alias gad="git add ."
+alias gmv=v"git mv"
+alias grm="git rm"
+alias gc="git commit"
+alias gpl="git pull"
+alias gpu="git push"
+# git branch
+alias gb="git branch"
+alias gsw="git switch"
+alias gbd="git branch -d"
+alias gbl="git branch -l"
+# git rebase
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+# git diff
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gdo="git diff origin/main"
+
+# tmux aliases
+alias tm="tmux"
+alias tma="tmux attach"
+alias tml="tmux list-sessions"
+alias tms="tmux new-session"
 
 # colorize grep
 alias grep='grep --color=auto'
