@@ -1,0 +1,30 @@
+[user]
+    email = {{ if hasKey . "email" }}{{ .email | quote }}{{ end }}
+    name = {{ if hasKey . "name" }}{{ .name | quote }}{{ end }}
+
+[core]
+    editor = "code --wait "
+    excludesFile = "{{ .chezmoi.homeDir }}/.gitignore_global"
+
+[init]
+    defaultbranch = main
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[merge]
+    ff = no
+    commit = no
+    tool = vscode
+
+[mergetool "vscode"]
+	cmd = "code --wait "
+
+[diff]
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
