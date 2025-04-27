@@ -68,7 +68,7 @@ switch_theme() {
 		--color=pointer:$rose_pine_iris,marker:$rose_pine_love,prompt:$rose_pine_subtle"
 }
 
-# Load the saved theme once when a new shell session starts
+# load the saved theme once when a new shell session starts
 load_theme() {
     local theme_file="$HOME/.zsh/.zsh_theme"
 
@@ -82,18 +82,28 @@ load_theme() {
     fi
 }
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # start tmux session by default
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach-session -t default || tmux new-session -s default
 fi
 
-# Ensure the theme is only loaded once
+# ensure the theme is only loaded once
 if [[ -z "$THEME_LOADED" ]]; then
     local THEME_LOADED=1
     load_theme
 fi
 
-# Aliases for theme switching
+# aliases for theme switching
 alias dark="switch_theme dark"
 alias light="switch_theme light"
 
