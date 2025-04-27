@@ -1,0 +1,29 @@
+packages:
+  darwin:
+    brew:
+    - git
+    - git-lfs
+    - htop
+    - starship
+    - fzf
+    - zoxide
+    cask:
+    - google-chrome
+    - visual-studio-code
+    - 1password
+    - 1password-cli
+    - docker
+    - discord
+    - spotify
+    - scroll-reverser
+  linux:
+    apt:
+    - git
+    - git-lfs
+    - curl
+    - htop
+    - ncdu
+    brew:
+    - fzf
+    - zoxide
+    - starship
