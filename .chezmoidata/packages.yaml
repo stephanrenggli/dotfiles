@@ -16,6 +16,7 @@ packages:
     - discord
     - spotify
     - scroll-reverser
+    - jordanbaird-ice
   linux:
     apt:
     - git
