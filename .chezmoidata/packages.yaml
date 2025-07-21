@@ -1,5 +1,7 @@
 packages:
   darwin:
+    tap:
+    - shaunsingh/SFMono-Nerd-Font-Ligaturized
     brew:
     - git
     - git-lfs
@@ -7,6 +9,7 @@ packages:
     - starship
     - fzf
     - zoxide
+    - tmux
     cask:
     - google-chrome
     - visual-studio-code
@@ -17,6 +20,8 @@ packages:
     - spotify
     - scroll-reverser
     - jordanbaird-ice
+    - font-sf-mono-nerd-font-ligaturized
+    - ghostty
   linux:
     apt:
     - git
