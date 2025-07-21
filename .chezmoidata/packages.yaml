@@ -22,6 +22,7 @@ packages:
     - jordanbaird-ice
     - font-sf-mono-nerd-font-ligaturized
     - ghostty
+    - raycast
   linux:
     apt:
     - git
