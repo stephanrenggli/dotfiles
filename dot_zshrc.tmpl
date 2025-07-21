@@ -47,7 +47,9 @@ switch_theme() {
     fi
 
     # set tmux theme
-    tmux set -g @rose_pine_variant "$tmux_theme"
+    if [[ -n "$TMUX" ]]; then
+      tmux set -g @rose_pine_variant "$tmux_theme"
+    fi
 
     # set zsh substring search colors
     HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=$rose_pine_iris,fg=$rose_pine_text,bold"
