@@ -4,7 +4,7 @@
 
 To install chezmoi and initialize the configs run:
 
-`sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply stephanrenggli`
+`sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply --ssh stephanrenggli`
 
 ## Post Install
 
