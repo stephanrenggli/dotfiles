@@ -1,0 +1,17 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+set -e
+
+# enable biometric sudo
+sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+
+# set sudo timeout to 1 minute
+TEMP_SUDOERS=$(mktemp)
+sudo sed -e 's/^Defaults timestamp_timeout=0$/Defaults timestamp_timeout=1/' /etc/sudoers > "$TEMP_SUDOERS"
+if sudo visudo -c -f "$TEMP_SUDOERS"; then
+    sudo cp "$TEMP_SUDOERS" /etc/sudoers
+    echo "Sudoers file updated successfully."
+fi
+rm -f "$TEMP_SUDOERS"
+
+{{ end -}}
