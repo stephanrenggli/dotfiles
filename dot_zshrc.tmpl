@@ -94,11 +94,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# start tmux session by default
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
-
 # ensure the theme is only loaded once
 if [[ -z "$THEME_LOADED" ]]; then
     local THEME_LOADED=1
