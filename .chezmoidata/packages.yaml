@@ -23,6 +23,7 @@ packages:
     - font-sf-mono-nerd-font-ligaturized
     - ghostty
     - raycast
+    - vnc-viewer
   linux:
     apt:
     - git
