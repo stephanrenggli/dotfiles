@@ -10,6 +10,7 @@ packages:
     - fzf
     - zoxide
     - tmux
+    - homeport/tap/termshot
     cask:
     - google-chrome
     - visual-studio-code

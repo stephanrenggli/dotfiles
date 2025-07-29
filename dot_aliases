@@ -59,3 +59,8 @@ alias grep='grep --color=auto'
 
 # enable aliases to be sudo’ed
 alias sudo='sudo '
+
+# termshot aliases
+alias ts="termshot --show-cmd --no-shadow"
+alias tsc="ts --clipboard"
+alias tsf="ts --filename ~/Downloads/termshot-$(date +%Y%m%d-%H%M%S%s).png"
