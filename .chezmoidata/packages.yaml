@@ -32,7 +32,11 @@ packages:
     - curl
     - htop
     - ncdu
+    - unzip
+    tap:
     brew:
     - fzf
     - zoxide
     - starship
+    cask:
+    - 1password-cli
