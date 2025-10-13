@@ -1,4 +1,4 @@
-theme = light:rose-pine-dawn,dark:rose-pine
+theme = dark:Rose Pine,light:Rose Pine Dawn
 shell-integration = zsh
 font-family = "Liga SFMono Nerd Font"
 font-family-bold = "Liga SFMono Nerd Font Bold"
