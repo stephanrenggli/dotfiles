@@ -11,6 +11,7 @@ packages:
     - zoxide
     - tmux
     - homeport/tap/termshot
+    - hl
     cask:
     - google-chrome
     - visual-studio-code
@@ -38,5 +39,6 @@ packages:
     - fzf
     - zoxide
     - starship
+    - hl
     cask:
     - 1password-cli
