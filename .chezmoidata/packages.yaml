@@ -16,7 +16,7 @@ packages:
     - visual-studio-code
     - 1password
     - 1password-cli
-    - docker
+    - docker-desktop
     - discord
     - spotify
     - scroll-reverser
