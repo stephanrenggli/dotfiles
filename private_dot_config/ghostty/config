@@ -6,3 +6,6 @@ font-family-italic = "Liga SFMono Nerd Font Italic"
 font-family-bold-italic = "Liga SFMono Nerd Font Bold Italic"
 keybind = global:ctrl+t=toggle_quick_terminal
 confirm-close-surface = false
+quick-terminal-position = "top"
+quick-terminal-screen = "mouse"
+quick-terminal-size = 25%, 50%
