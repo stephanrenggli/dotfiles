@@ -1,44 +1,45 @@
 packages:
   darwin:
     tap:
-    - shaunsingh/SFMono-Nerd-Font-Ligaturized
+      - shaunsingh/SFMono-Nerd-Font-Ligaturized
     brew:
-    - git
-    - git-lfs
-    - htop
-    - starship
-    - fzf
-    - zoxide
-    - tmux
-    - homeport/tap/termshot
-    - hl
+      - git
+      - git-lfs
+      - htop
+      - starship
+      - fzf
+      - zoxide
+      - tmux
+      - homeport/tap/termshot
+      - hl
     cask:
-    - google-chrome
-    - visual-studio-code
-    - 1password
-    - 1password-cli
-    - docker-desktop
-    - discord
-    - spotify
-    - scroll-reverser
-    - jordanbaird-ice
-    - font-sf-mono-nerd-font-ligaturized
-    - ghostty
-    - raycast
-    - vnc-viewer
+      - google-chrome
+      - visual-studio-code
+      - 1password
+      - 1password-cli
+      - docker-desktop
+      - discord
+      - spotify
+      - loop
+      - scroll-reverser
+      - jordanbaird-ice
+      - font-sf-mono-nerd-font-ligaturized
+      - ghostty
+      - raycast
+      - vnc-viewer
   linux:
     apt:
-    - git
-    - git-lfs
-    - curl
-    - htop
-    - ncdu
-    - unzip
+      - git
+      - git-lfs
+      - curl
+      - htop
+      - ncdu
+      - unzip
     tap:
     brew:
-    - fzf
-    - zoxide
-    - starship
-    - hl
+      - fzf
+      - zoxide
+      - starship
+      - hl
     cask:
-    - 1password-cli
+      - 1password-cli
