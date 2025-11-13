@@ -12,6 +12,8 @@ packages:
       - tmux
       - homeport/tap/termshot
       - hl
+      - lazydocker
+      - lazygit
     cask:
       - google-chrome
       - visual-studio-code
@@ -41,5 +43,7 @@ packages:
       - zoxide
       - starship
       - hl
+      - lazydocker
+      - lazygit
     cask:
       - 1password-cli
