@@ -7,11 +7,13 @@ packages:
       - git-lfs
       - htop
       - starship
+      - derailed/k9s/k9s
       - fzf
       - zoxide
       - tmux
       - homeport/tap/termshot
       - hl
+      - kubectl
       - lazydocker
       - lazygit
     cask:
@@ -27,6 +29,7 @@ packages:
       - jordanbaird-ice
       - font-sf-mono-nerd-font-ligaturized
       - ghostty
+      - keyclu
       - raycast
       - vnc-viewer
   linux:
