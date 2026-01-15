@@ -3,50 +3,50 @@ packages:
     tap:
       - shaunsingh/SFMono-Nerd-Font-Ligaturized
     brew:
-      - git
-      - git-lfs
-      - htop
-      - starship
       - derailed/k9s/k9s
       - fzf
-      - zoxide
-      - tmux
-      - homeport/tap/termshot
+      - git
+      - git-lfs
       - hl
+      - homeport/tap/termshot
+      - htop
       - kubectl
       - lazydocker
       - lazygit
+      - starship
+      - tmux
+      - zoxide
     cask:
-      - google-chrome
-      - visual-studio-code
       - 1password
       - 1password-cli
-      - docker-desktop
       - discord
-      - spotify
-      - loop
-      - scroll-reverser
-      - jordanbaird-ice
+      - docker-desktop
       - font-sf-mono-nerd-font-ligaturized
       - ghostty
+      - google-chrome
+      - jordanbaird-ice
       - keyclu
+      - loop
       - raycast
+      - scroll-reverser
+      - spotify
+      - visual-studio-code
       - vnc-viewer
   linux:
     apt:
+      - curl
       - git
       - git-lfs
-      - curl
       - htop
       - ncdu
       - unzip
     tap:
     brew:
       - fzf
-      - zoxide
-      - starship
       - hl
       - lazydocker
       - lazygit
+      - starship
+      - zoxide
     cask:
       - 1password-cli
