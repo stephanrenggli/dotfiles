@@ -1,11 +1,29 @@
 theme = dark:Rose Pine,light:Rose Pine Dawn
-shell-integration = zsh
+
+# font
 font-family = "Liga SFMono Nerd Font"
 font-family-bold = "Liga SFMono Nerd Font Bold"
 font-family-italic = "Liga SFMono Nerd Font Italic"
 font-family-bold-italic = "Liga SFMono Nerd Font Bold Italic"
-keybind = global:ctrl+t=toggle_quick_terminal
+
+# clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+# shell integration
+shell-integration = detect
+shell-integration-features = cursor, sudo, title
+
+# quit
+quit-after-last-window-closed = true
 confirm-close-surface = false
+
+# quick terminal
+keybind = global:ctrl+t=toggle_quick_terminal
 quick-terminal-position = "top"
 quick-terminal-screen = "mouse"
 quick-terminal-size = 25%, 50%
+
+# macos
+macos-auto-secure-input = true
+macos-secure-input-indication = true
