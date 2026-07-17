@@ -1,6 +1,8 @@
 packages:
   darwin:
     tap:
+      - derailed/k9s
+      - homeport/tap
       - shaunsingh/SFMono-Nerd-Font-Ligaturized
     brew:
       - derailed/k9s/k9s
@@ -23,7 +25,7 @@ packages:
       - 1password-cli
       - discord
       - docker-desktop
-      - font-sf-mono-nerd-font-ligaturized
+      - shaunsingh/SFMono-Nerd-Font-Ligaturized/font-sf-mono-nerd-font-ligaturized
       - ghostty
       - google-chrome
       - jordanbaird-ice
@@ -42,7 +44,7 @@ packages:
       - htop
       - ncdu
       - unzip
-    tap:
+    tap: []
     brew:
       - fzf
       - hl

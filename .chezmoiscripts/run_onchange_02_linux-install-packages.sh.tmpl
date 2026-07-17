@@ -11,7 +11,7 @@ sudo apt-get autoremove
 # install brew packages
 brew bundle install --file=/dev/stdin <<EOF
 {{ range .packages.linux.tap -}}
-tap {{ . | quote }}
+tap {{ . | quote }}, trusted: true
 {{ end -}}
 {{ range .packages.linux.brew -}}
 brew {{ . | quote }}

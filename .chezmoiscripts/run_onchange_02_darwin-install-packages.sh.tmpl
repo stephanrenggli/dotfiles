@@ -4,7 +4,7 @@ set -e
 
 brew bundle install --file=/dev/stdin <<EOF
 {{ range .packages.darwin.tap -}}
-tap {{ . | quote }}
+tap {{ . | quote }}, trusted: true
 {{ end -}}
 {{ range .packages.darwin.brew -}}
 brew {{ . | quote }}
