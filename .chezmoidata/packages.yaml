@@ -25,7 +25,7 @@ packages:
       - 1password-cli
       - discord
       - docker-desktop
-      - shaunsingh/SFMono-Nerd-Font-Ligaturized/font-sf-mono-nerd-font-ligaturized
+      - espanso
       - ghostty
       - google-chrome
       - jordanbaird-ice
@@ -33,6 +33,7 @@ packages:
       - loop
       - raycast
       - scroll-reverser
+      - shaunsingh/SFMono-Nerd-Font-Ligaturized/font-sf-mono-nerd-font-ligaturized
       - spotify
       - visual-studio-code
       - vnc-viewer
